@@ -16,17 +16,5 @@ app.listen(serverConfig.PORT,async ()=>{
     // here we pass info level we can pass level as warning,error
     // we have to pass message,label,timestamp
     Logger.info("Successfully started the server","root",{})
-    try{
-        const response = await mailsender.sendMail({
-            from:serverConfig.GMAIL_EMAIL,
-            to:"shubhamtalukdar06@gmail.com",
-            subject:"is the service working ? now as well",
-            text : "yes it is working"
-        })
-        return response
-    }
-    catch(err){
-        console.log(err)
-    }
 })
 
